@@ -164,20 +164,29 @@ hr {
 }
 
 .floating-heart {
-  position: fixed;
-  font-size: 20px;
-  color: red;
-  z-index: 9999;
-  pointer-events: none;
-  animation: fadeOut 3s forwards;
+    position: fixed;
+    font-size: 20px;
+    color: red;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall 5s linear forwards, fadeOut 4s forwards; 
 }
 
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1; 
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-}
-
-to {
-  opacity: 0;
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
