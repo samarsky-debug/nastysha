@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Любимой Настюше</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Любимой Настюше</h1>
     </header>
-    <div class="heart"></div>
     <hr>
 <div class="stih1">
 и сто дней по зади, но мы вместе в пути
@@ -124,28 +123,22 @@
     <a href="https://t.me/sexualdomain" target="_blank">от Димки</a>
   </div>
 </footer>
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart'); 
+        heart.innerHTML = '❤️';
 
- <script>
-        function createHeart () {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = '❤️';
+        const x = Math.random() * window.innerWidth;
+        const y = -20; 
 
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
 
-            heart.style.left = x + 'px';
-            heart.style.top = y + 'px';
+        document.body.appendChild(heart);
 
-            document.body.appendChild(heart);
-
-            heart.addEventListener('animationend', () => {
-                heart.remove();
-            });
-        }
-
-        setInterval(createHeart, 50);
-    </script>
+    }
+    setInterval(createHeart, 40);
+</script>
 </body>
 </html>
-
