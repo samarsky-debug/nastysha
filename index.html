@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Любимой от любимого</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -114,6 +114,7 @@
 с тобой готов вечно я быть
 что бы каждый день для тебя жить
 </div>
+
 <footer class="site-footer">
   <div class="love">
     <h1>Я тебя люблю</h1>
@@ -123,7 +124,27 @@
     <a href="https://t.me/sexualdomain" target="_blank">от Димки</a>
   </div>
 </footer>
+
+ <script>
+        function createHeart () {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+
+            document.body.appendChild(heart);
+
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+
+        setInterval(createHeart, 50);
+    </script>
 </body>
-
 </html>
-
