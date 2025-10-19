@@ -124,21 +124,21 @@
   </div>
 </footer>
 <script>
-    function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('floating-heart'); 
-        heart.innerHTML = '❤️';
-
-        const x = Math.random() * window.innerWidth;
-        const y = -20; 
-
-        heart.style.left = x + 'px';
-        heart.style.top = y + 'px';
-
-        document.body.appendChild(heart);
-
-    }
-    setInterval(createHeart, 40);
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('floating-heart');
+  heart.innerHTML = '❤️';
+  const x = Math.random() * window.innerWidth;
+  const y = -20;
+  heart.style.left = x + 'px';
+  heart.style.top = y + 'px';
+  heart.addEventListener('animationend', () => {
+    heart.remove();
+  });
+  document.body.appendChild(heart);
+}
+setInterval(createHeart, 40);
 </script>
 </body>
 </html>
+
